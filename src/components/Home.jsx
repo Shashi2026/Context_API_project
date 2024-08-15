@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Nav from "./Nav";
 import { Link } from "react-router-dom";
-import { ProductContext } from "../utils/Context";
+import { ProductContext } from "./Context";
 import Loading from "./Loading";
 
 const Home = () => {
@@ -14,6 +14,7 @@ const Home = () => {
       <div className="w-[85%] p-10 pt-[5%] flex flex-wrap overflow-x-hidden overflow-y-auto">
         {products.map((p, i) => (
           <Link
+          key={i}
             to={`/details/${p.id}`}
             className="mr-3 mb-3 card p-3 border shadow rounded w-[18%] h-[30vh] flex-col flex justify-center items-center"
           >
